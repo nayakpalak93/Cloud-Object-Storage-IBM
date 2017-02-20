@@ -59,9 +59,8 @@ def download():
 	for document in my_database:
 		if (document['file_name'] == file_name and document['version'] == int(file_version)):
 			dt = document['data']
-			f= open(file_name,"w+")
-			f.write(dt)  #file will be downloaded in the current local directory
-			response = "<h3>The requested file has been downloaded</h3><form action='../'><input type='Submit' value='Back to Home Page'></form>"
+			response = make_response(dt)
+        		response.headers["Content-Disposition"] = "attachment; filename=%s"%file_name
 		else:
 			response = "<h3>File not Found</h3><form action='../'><input type='Submit' value='Back to Home Page'></form>"
 	return response
