@@ -1,1 +1,7 @@
+cloudant==2.3.1
 Flask==0.10.1
+python-swiftclient==3.2.0
+requests==2.12.5
+keystoneauth1==2.18.0
+python-keystoneclient==3.9.0
+cloudantdb==0.2
